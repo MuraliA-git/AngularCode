@@ -1,0 +1,62 @@
+<form #employeeForm="ngForm" (ngSubmit)="saveEmployees(employeeForm)">
+<div class="panel panel-primary" >
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Create User</h3>
+    </div>
+
+<div class="panel-body">
+
+<div class="form-group">
+    <label for="empid">EmpId</label>
+    <input type="text" name="empid" id="empid" [(ngModel)]="EmployeeDetails.empid " class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="empname">Employee Name</label>
+    <input type="text" name="empname" [(ngModel)]="EmployeeDetails.empname" class="form-control">
+</div>
+
+
+
+
+<div class="form-group">
+    <label >Designation</label>
+
+    <div class="form-control">
+             <label class="radio-inline"> 
+                  <input type="radio" value="ITA" name="designation" [(ngModel)]="EmployeeDetails.designation" >ITA
+               </label> 
+             <label class="radio-inline">
+                <input type="radio" value="SE" name="designation" [(ngModel)]="EmployeeDetails.designation" >
+                SE
+             </label> 
+        <label class="radio-inline"><input type="radio" value="Trainee" name="designation" [(ngModel)]="designation" >
+        Trainee
+        </label>
+     </div>
+</div>
+
+<div class="form-group">
+    <label >Technology</label>
+
+    <div class="form-control">
+             <label class="radio-inline"> 
+                  <input type="radio" value="Angular" name="technology" [(ngModel)]="EmployeeDetails.Tech" >Angular
+               </label> 
+             <label class="radio-inline">
+                <input type="radio" value="Java" name="technology" [(ngModel)]="EmployeeDetails.Tech" >
+                Java
+             </label> 
+        <label class="radio-inline"><input type="radio" value="Testing" name="technology" [(ngModel)]="Tech" >
+        Testing
+        </label>
+     </div>
+</div>
+</div>
+
+    <div class="panel-footer">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</div>
+</form>
