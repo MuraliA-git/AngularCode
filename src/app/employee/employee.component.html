@@ -1,0 +1,53 @@
+
+<html>
+    <head></head>
+    <body>
+        
+    <table class="table table-bordered" id="export-table"><thead>   <tr>
+    <th scope="=col">EmpId</th><th scope="=col">EmpName</th><th scope="=col">Designation</th><th scope="=col">Tech</th></tr></thead>
+     <tbody>
+    
+        <tr *ngFor="let emp of employee">
+            <td scope="row"><a routerLink="/View">{{emp.id}}</a></td>
+            <td scope="row">{{emp.name}}</td>
+            <td scope="row">{{emp.designation}}</td>
+            <td scope="row">{{emp.Tech}}</td>
+    
+        </tr>
+     </tbody>
+     
+    
+    </table>
+    
+    
+        <button (click)="exportToExcel()" type="submit" class="btn btn-primary">Export</button>
+   
+   <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+        
+    </body>
+    <router-outlet></router-outlet>
+    
+    </html>
+    
