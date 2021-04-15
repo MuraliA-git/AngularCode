@@ -2,16 +2,20 @@
 <html>
     <head></head>
     <body>
-        
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+            <input type="text" #text class="pull-right" [ngModel]="date"  />
+            </div>
     <table class="table table-bordered" id="export-table"><thead>   <tr>
     <th scope="=col">EmpId</th><th scope="=col">EmpName</th><th scope="=col">Designation</th><th scope="=col">Tech</th></tr></thead>
      <tbody>
     
         <tr *ngFor="let emp of employee">
             <td scope="row"><a routerLink="/View">{{emp.id}}</a></td>
-            <td scope="row">{{emp.name}}</td>
+            <td scope="row">{{emp.name|uppercase}}</td>
             <td scope="row">{{emp.designation}}</td>
-            <td scope="row">{{emp.Tech}}</td>
+            <td scope="row">{{emp.Tech | lowercase}}</td>
     
         </tr>
      </tbody>
@@ -20,7 +24,7 @@
     </table>
     
     
-        <button (click)="exportToExcel()" type="submit" class="btn btn-primary">Export</button>
+        <button (click)="exportToExcel()" type="submit" class="btn btn-primary" #child>Export</button>
    
    <!-- Trigger the modal with a button -->
 <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#myModal">Open Modal</button>
@@ -45,9 +49,10 @@
 
   </div>
 </div>
-        
+</div>
+</div>
     </body>
     <router-outlet></router-outlet>
-    
+  
     </html>
     

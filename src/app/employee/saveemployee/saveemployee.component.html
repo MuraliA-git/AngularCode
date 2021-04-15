@@ -1,4 +1,9 @@
+
 <form #employeeForm="ngForm" (ngSubmit)="saveEmployees(employeeForm)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6"> 
 <div class="panel panel-primary" >
 
     <div class="panel-heading">
@@ -9,7 +14,7 @@
 
 <div class="form-group">
     <label for="empid">EmpId</label>
-    <input type="text" name="empid" id="empid" [(ngModel)]="EmployeeDetails.empid " class="form-control">
+    <input type="text" name="empid" id="empid" [(ngModel)]="EmployeeDetails.empid " class="form-control" >
 </div>
 
 <div class="form-group">
@@ -59,4 +64,13 @@
         <button type="submit" class="btn btn-primary">Save</button>
     </div>
 </div>
+</div>
+
+<div class="col-md-12">
+
+    
+    <app-employee></app-employee>
+</div>
+</div>
+    </div>
 </form>
