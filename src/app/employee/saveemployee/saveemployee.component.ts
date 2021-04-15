@@ -8,6 +8,7 @@ import { IEmployee } from './employee';
   templateUrl: './saveemployee.component.html',
 })
 export class SaveemployeeComponent implements OnInit,AfterViewInit {
+  ListEnable :boolean=false;
 empid:String='';
 empname:String='';
 designation:String='ITA';
@@ -21,6 +22,18 @@ EmployeeDetails=new IEmployee();
 
   ngOnInit(): void {
   }
+
+  employees=
+    {
+      id: 10,
+      name:"murali",
+      designation:"ITA",
+      Tech:"Angular"
+    
+    
+    }
+
+
 @ViewChild(EmployeeComponent) date!:EmployeeComponent;
   saveEmployees(employeeForm:NgForm):void
   {

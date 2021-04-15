@@ -9,8 +9,8 @@ import html2canvas from 'html2canvas';
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css']
 })
-export class EmployeeComponent implements OnInit,AfterViewInit {
 
+export class EmployeeComponent implements OnInit,AfterViewInit {
   public employee :any[]=[];
 
   date:Date=new Date();

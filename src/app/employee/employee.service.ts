@@ -14,6 +14,6 @@ constructor(private _http:HttpClient)
 }
 public getEmployees():Observable<IEmployee[]>
 {
-    return this._http.get<IEmployee[]>("/assets/Data/data.json");
+    return this._http.get<IEmployee[]>("http://localhost:3000/employees/");
 }
 }
