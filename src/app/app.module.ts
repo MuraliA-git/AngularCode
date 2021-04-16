@@ -11,11 +11,13 @@ import { FormsModule } from '@angular/forms';
 import { SaveemployeeComponent } from './employee/saveemployee/saveemployee.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ViewComponent } from './employee/view/view.component';
+import { SearchEmployeeComponent } from './employee/search-employee/search-employee.component';
 const appRoutes:Routes=[
 
   {path: 'List',component: EmployeeComponent},
   {path: 'Create',component: SaveemployeeComponent},
 {path:'View',component:ViewComponent},
+{path:'Search',component:SearchEmployeeComponent},
   {path: '',redirectTo: '/List',pathMatch:'full'}
 
 ];
@@ -24,7 +26,8 @@ const appRoutes:Routes=[
     AppComponent,
     EmployeeComponent,
     SaveemployeeComponent,
-    ViewComponent
+    ViewComponent,
+    SearchEmployeeComponent
   ],
   imports: [
     BrowserModule,

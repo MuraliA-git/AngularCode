@@ -1,6 +1,11 @@
+import { JsonPipe } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { EmployeeComponent } from '../employee.component';
+import { EmployeeService } from '../employee.service';
 import { IEmployee } from './employee';
 
 @Component({
@@ -13,9 +18,9 @@ empid:String='';
 empname:String='';
 designation:String='ITA';
 Tech:String='Angular'
-
+ isHidden:boolean=false;
 EmployeeDetails=new IEmployee();
-  constructor() { }
+  constructor(private service:EmployeeService) { }
   ngAfterViewInit(): void {
     console.log(this.date.date);
   }
@@ -25,20 +30,32 @@ EmployeeDetails=new IEmployee();
 
   employees=
     {
-      id: 10,
-      name:"murali",
-      designation:"ITA",
-      Tech:"Angular"
+      id: this.empid,
+      name:this.empname,
+      designation:this.designation,
+      Tech:this.Tech
     
     
     }
 
 
 @ViewChild(EmployeeComponent) date!:EmployeeComponent;
-  saveEmployees(employeeForm:NgForm):void
+  saveEmployees():void
   {
-console.log(this.EmployeeDetails);
-console.log(employeeForm)
+let saveObj=JSON.parse(JSON.stringify(this.EmployeeDetails))
+ this.service.save(saveObj).subscribe((data:any)=>{console.log("data saved "+data.stringify)});
+  }
+  delete():void
+  {
+   
+this.service.delete(this.EmployeeDetails.id).subscribe(()=>console.log('deleted user  successfully'+this.EmployeeDetails.id));
+  }
 
+  update():void
+  {
+    let dataobj=JSON.parse(JSON.stringify(this.EmployeeDetails))
+    this.service.update(dataobj).subscribe(data=>{
+      console.log(data);
+    });
   }
 }

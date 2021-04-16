@@ -1,7 +1,7 @@
 export class IEmployee
 {
-    empid:any='';
-    empname:String='';
+    id:any='';
+    name:String='';
     designation:String='';
     Tech:String='';
 }
