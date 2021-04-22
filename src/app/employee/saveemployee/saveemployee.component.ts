@@ -4,6 +4,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import {FormControl} from '@angular/forms'
 import { EmployeeComponent } from '../employee.component';
 import { EmployeeService } from '../employee.service';
 import { IEmployee } from './employee';
@@ -13,6 +14,7 @@ import { IEmployee } from './employee';
   templateUrl: './saveemployee.component.html',
 })
 export class SaveemployeeComponent implements OnInit,AfterViewInit {
+  formcontrol:FormControl=new FormControl();
   ListEnable :boolean=false;
 empid:String='';
 empname:String='';

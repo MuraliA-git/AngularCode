@@ -1,7 +1,7 @@
 export interface IEmployee
 {
-    empid:Number,
-    empname:String,
+    id:Number,
+    name:String,
     designation:String,
     Tech:String
 }

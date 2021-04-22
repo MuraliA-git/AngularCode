@@ -8,7 +8,12 @@ import { catchError,map,mergeMap } from "rxjs/operators";
 @Injectable()
 export class EmployeeService
 {
+getEmploy(id:any)
+{
+return this.getData(id);
+}
 update(EmployeeDetails: any):Observable<IEmployee>  {
+  console.log(EmployeeDetails)
   return this._http.put<IEmployee>(`http://localhost:3000/employees/${EmployeeDetails.id}`, EmployeeDetails);
 }
 getData(empid:String):Observable<any>

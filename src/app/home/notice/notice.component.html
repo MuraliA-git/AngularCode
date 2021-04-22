@@ -1,0 +1,49 @@
+<html>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="col-md-8"></div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary pull-right" (click)="downloadPdf()">Download All Notices</button>
+                </div>
+
+            </div>
+            <br><br>
+            <div class="col-md-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+
+                    <div class="panel-group">
+                        <div id="notice" name="not" #not>
+                            <div class="panel panel-primary" *ngFor="let notice of notice">
+
+                                <div class="panel-heading">
+                                    <h5>Notice Id:{{notice.id}}</h5>
+                                    <h5>{{notice.name}}</h5>
+                                </div>
+                                <div class="panel-body">
+                                    {{notice.notice}}
+                                </div>
+                                <div class="panel-footer">
+                                    Notice End
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

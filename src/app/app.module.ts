@@ -12,13 +12,29 @@ import { SaveemployeeComponent } from './employee/saveemployee/saveemployee.comp
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ViewComponent } from './employee/view/view.component';
 import { SearchEmployeeComponent } from './employee/search-employee/search-employee.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { NoticeComponent } from './home/notice/notice.component';
+import { CreateComponent } from './home/notice/create/create.component';
+import { AuthGuard } from './auth.guard';
+import { NoticeserviceService } from './home/notice/noticeservice.service';
+import { AdminGuard } from './guard/admin.guard';
+import { UnsavedGuard } from './guard/unsaved.guard';
+import {ReactiveFormsModule} from '@angular/forms'
 const appRoutes:Routes=[
 
-  {path: 'List',component: EmployeeComponent},
-  {path: 'Create',component: SaveemployeeComponent},
-{path:'View',component:ViewComponent},
+  {path: 'List',component: EmployeeComponent,canActivate:[AuthGuard]},
+  {path: 'Create',component: SaveemployeeComponent,canDeactivate:[UnsavedGuard]},
+{path:'View/:id',component:ViewComponent},
 {path:'Search',component:SearchEmployeeComponent},
-  {path: '',redirectTo: '/List',pathMatch:'full'}
+{path:'Home',component:HomeComponent, children:[
+  {path:'Notice',component:NoticeComponent},
+  {path:'Create',component:CreateComponent},
+  {path:'',redirectTo:'Notice',pathMatch:'full'}
+
+]},
+  {path: '',redirectTo: 'Home',pathMatch:'full'}
+
 
 ];
 @NgModule({
@@ -27,7 +43,11 @@ const appRoutes:Routes=[
     EmployeeComponent,
     SaveemployeeComponent,
     ViewComponent,
-    SearchEmployeeComponent
+    SearchEmployeeComponent,
+    FooterComponent,
+    HomeComponent,
+    NoticeComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +55,10 @@ const appRoutes:Routes=[
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService,AuthGuard,NoticeserviceService,UnsavedGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

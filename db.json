@@ -2,9 +2,9 @@
   "employees": [
     {
       "id": 10,
-      "name": "murali",
-      "designation": "ITA",
-      "Tech": "Angular"
+      "name": "Murali",
+      "designation": "Trainee",
+      "Tech": "Testing"
     },
     {
       "id": 13,
@@ -49,40 +49,48 @@
       "Tech": "Angular"
     },
     {
-      "id": "roGFzV8",
+      "id": "GnaKYTZ",
       "name": "",
       "designation": "",
       "Tech": ""
+    }
+  ],
+  "notice": [
+    {
+      "id": "1",
+      "notice": "Good",
+      "name": "Notice For Training",
+      "date": "20-01-2021"
     },
     {
-      "id": "3baKwgL",
-      "name": "",
-      "designation": "",
-      "Tech": ""
+      "id": "2",
+      "notice": "Average",
+      "name": "Notice for Recruitment",
+      "date": "20-01-2021"
     },
     {
-      "id": "cD_F5rM",
-      "name": "",
-      "designation": "",
-      "Tech": ""
+      "id": "3",
+      "notice": "Excellent",
+      "name": "Notice For Employees",
+      "date": "20-01-2021"
     },
     {
-      "id": "OyoucX8",
-      "name": "",
-      "designation": "",
-      "Tech": ""
+      "id": "0",
+      "notice": "Training",
+      "name": "Angular Training",
+      "date": "2021-04-21T10:45:02.872Z"
     },
     {
-      "id": "YRdIM0g",
-      "name": "",
-      "designation": "",
-      "Tech": ""
+      "id": "4",
+      "notice": "Training",
+      "name": "Angular Training",
+      "date": "2021-04-21T10:45:02.872Z"
     },
     {
-      "id": "L2NOpzL",
-      "name": "",
-      "designation": "",
-      "Tech": ""
+      "id": "5",
+      "notice": "Learn Angular",
+      "name": "Learning",
+      "date": "2021-04-21T10:53:14.171Z"
     }
   ]
 }

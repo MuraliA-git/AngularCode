@@ -20,7 +20,7 @@
      <tbody>
     
         <tr *ngFor="let emp of employee">
-            <td scope="row"><a routerLink="/View">{{emp.id}}</a></td>
+            <td scope="row"><a [routerLink]="['/View',emp.id]">{{emp.id}}</a></td>
             <td scope="row">{{emp.name|uppercase}}</td>
             <td scope="row">{{emp.designation}}</td>
             <td scope="row">{{emp.Tech | lowercase}}</td>
